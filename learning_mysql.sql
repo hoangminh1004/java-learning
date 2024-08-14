@@ -1,1 +1,1 @@
-dfjsdj
+create database my_lerning;
