@@ -30,3 +30,43 @@ accountId int ,
 joiDate tinyint 
 );
 
+create table `typequestion`(
+typeId int auto_increment primary key ,
+typeName varchar(50) 
+);
+
+create table `categoryquestion` (
+categororyId int auto_increment primary key ,
+categoryName varchar(50)
+);
+
+create table `question` (
+questionId int auto_increment primary key ,
+content varchar(255) ,
+categoryId int ,
+typeId int ,
+creatorId int ,
+createDate tinyint
+);
+
+create table `answer`(
+answerId int auto_increment primary key ,
+content varchar(255) ,
+questionId int ,
+iscorrect tinyint
+);
+
+create table `exam`(
+examId int auto_increment primary key ,
+code tinyint ,
+title varchar(50) ,
+categoryId int ,
+duration tinyint ,
+creatorId int ,
+createDate tinyint
+);
+
+create table `examquestion` (
+examId int ,
+questionId int 
+);
