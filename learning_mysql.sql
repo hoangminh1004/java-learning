@@ -16,3 +16,17 @@ departmentId int ,
 positionId int ,
 createDate tinyint
 );
+
+create table `group` (
+groupId int unsigned auto_increment primary key ,
+groupName varchar(50) ,
+creatorId int , 
+createDate tinyint 
+);
+
+create table `groupaccount` (
+groupId int , 
+accountId int ,
+joiDate tinyint 
+);
+
