@@ -24,18 +24,18 @@ creatorId int ,
 createDate tinyint 
 );
 
-create table `groupaccount` (
+create table `groupAccount` (
 groupId int , 
 accountId int ,
 joiDate tinyint 
 );
 
-create table `typequestion`(
+create table `typeQuestion`(
 typeId int auto_increment primary key ,
 typeName varchar(50) 
 );
 
-create table `categoryquestion` (
+create table `categoryQuestion` (
 categororyId int auto_increment primary key ,
 categoryName varchar(50)
 );
@@ -46,27 +46,28 @@ content varchar(255) ,
 categoryId int ,
 typeId int ,
 creatorId int ,
-createDate tinyint
+createDate date
 );
 
-create table `answer`(
+create table `answer` (
 answerId int auto_increment primary key ,
 content varchar(255) ,
 questionId int ,
 iscorrect tinyint
 );
 
-create table `exam`(
+create table `exam` (
 examId int auto_increment primary key ,
 code tinyint ,
 title varchar(50) ,
 categoryId int ,
-duration tinyint ,
+duration int ,
 creatorId int ,
-createDate tinyint
+createDate date
 );
 
-create table `examquestion` (
+create table `examQuestion` (
 examId int ,
 questionId int 
 );
+
