@@ -78,10 +78,14 @@ create table account (
 	);
 
 CREATE table ` position`(
-positionId INT,
+positionId INT, 
 positionName varchar(255)
 );
-INSERT INTO 
+INSERT INTO ` position` (positionId ,positionName)
+values (2,"DEV");
+
+SELECT * FROM ` position` p 
+
 
 	
 	
@@ -104,8 +108,25 @@ join department d on a.departmentId = d.departmentId
 SELECT * FROM account a 
 WHERE a.createDate <2010-12-20
 ;
-SELECT 
+SELECT *FROM account a 
+join ` position` p on a.positionId = p.positionId 
+where p.positionName = "dev"
 
 
+SELECT a.accountId, a.accountEmail FROM account a 
+union
+SELECT * FROM ` position` p 
 
+-- Quest 17
+-- a lấy các account thuộc nhóm1
+-- b lấy các account thuộc nhóm2
+SELECT c.* from groupaccount a
+join `group` b on a.groupId  = b.groupId 
+JOIN account c on a.accountId  = c.accountId 
+where b.groupName = "NHOM 1"
+UNION 
+SELECT c.* from groupaccount a
+join `group` b on a.groupId  = b.groupId 
+JOIN account c on a.accountId  = c.accountId 
+where b.groupName = "NHOM 2"
 
