@@ -130,3 +130,44 @@ join `group` b on a.groupId  = b.groupId
 JOIN account c on a.accountId  = c.accountId 
 where b.groupName = "NHOM 2"
 
+-- question 18
+-- a lấy các group lơn hơn 5 thành viên
+-- b lấy các grop có nhỏ hơn 7 thành viên
+-- c ghép 2 kết quả từ a và b
+SELECT g.* from `group` g 
+where g.groupId >5
+union ALL 
+SELECT g. * from `group` g 
+WHERE g.groupId <7
+
+-- question 4
+-- viết lệnh để lấy ra danh sách các phòng ban có >3 thành viên
+
+SELECT * from account a 
+join department d on a.departmentId = d.departmentId 
+WHERE a.accountId >3
+
+-- question 6
+-- thống kê mỗi category question được sử dụng trong bao nhiêu question
+SELECT * from categoryquestion c 
+group by categororyId 
+
+-- question 7
+-- thống kê mỗi question được sử dụng trong bao nhiêu exam
+SELECT e.examId , 
+
+
+-- question 14
+-- lấy ra group không có account nào
+SELECT * FROM `group` g 
+JOIN account a ON g.groupId = a.accountId 
+where a.accountId = NULL 
+
+-- question 14
+-- lấy ra question không có answer nào
+SELECT  * FROM question q 
+join account a on q.questionId = a.accountId 
+WHERE a.accountId = NULL 
+
+
+
