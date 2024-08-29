@@ -107,7 +107,8 @@ SELECT * FROM question q
 WHERE questionId >=4
 
 -- question 8: lấy ra các mã đè thi có thời gian thi >=60 phút dc tạo trước ngày 20/12/2019
-SELECT * FROM 
+SELECT * FROM account
+
 
 -- question 9: lấy ra 5 group được tạo gần đây nhất 
 SELECT *FROM `group` g 
@@ -142,5 +143,6 @@ SET accountId =5
 WHERE accountId =4;
 
 SELECT *FROM account a 
+
 
 

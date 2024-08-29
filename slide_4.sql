@@ -144,8 +144,9 @@ WHERE g.groupId <7
 -- viết lệnh để lấy ra danh sách các phòng ban có >3 thành viên
 
 SELECT * from account a 
-join department d on a.departmentId = d.departmentId 
+join question q on a.accountId = q.questionId 
 WHERE a.accountId >3
+
 
 -- question 6
 -- thống kê mỗi category question được sử dụng trong bao nhiêu question
@@ -169,5 +170,10 @@ SELECT  * FROM question q
 join account a on q.questionId = a.accountId 
 WHERE a.accountId = NULL 
 
+-- question 9
+-- thống kê số lượng account trong mỗi group
+
+--question 11
+-- thống kê mỗi phòng ban có bao nhiêu dev, test, scrum,master,PM
 
 
