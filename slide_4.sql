@@ -78,10 +78,14 @@ create table account (
 	);
 
 CREATE table ` position`(
-positionId INT,
+positionId INT, 
 positionName varchar(255)
 );
-INSERT INTO 
+INSERT INTO ` position` (positionId ,positionName)
+values (2,"DEV");
+
+SELECT * FROM ` position` p 
+
 
 	
 	
@@ -104,8 +108,72 @@ join department d on a.departmentId = d.departmentId
 SELECT * FROM account a 
 WHERE a.createDate <2010-12-20
 ;
-SELECT 
+SELECT *FROM account a 
+join ` position` p on a.positionId = p.positionId 
+where p.positionName = "dev"
 
 
+SELECT a.accountId, a.accountEmail FROM account a 
+union
+SELECT * FROM ` position` p 
+
+-- Quest 17
+-- a lấy các account thuộc nhóm1
+-- b lấy các account thuộc nhóm2
+SELECT c.* from groupaccount a
+join `group` b on a.groupId  = b.groupId 
+JOIN account c on a.accountId  = c.accountId 
+where b.groupName = "NHOM 1"
+UNION 
+SELECT c.* from groupaccount a
+join `group` b on a.groupId  = b.groupId 
+JOIN account c on a.accountId  = c.accountId 
+where b.groupName = "NHOM 2"
+
+-- question 18
+-- a lấy các group lơn hơn 5 thành viên
+-- b lấy các grop có nhỏ hơn 7 thành viên
+-- c ghép 2 kết quả từ a và b
+SELECT g.* from `group` g 
+where g.groupId >5
+union ALL 
+SELECT g. * from `group` g 
+WHERE g.groupId <7
+
+-- question 4
+-- viết lệnh để lấy ra danh sách các phòng ban có >3 thành viên
+
+SELECT * from account a 
+join question q on a.accountId = q.questionId 
+WHERE a.accountId >3
+
+
+-- question 6
+-- thống kê mỗi category question được sử dụng trong bao nhiêu question
+SELECT * from categoryquestion c 
+group by categororyId 
+
+-- question 7
+-- thống kê mỗi question được sử dụng trong bao nhiêu exam
+SELECT e.examId , 
+
+
+-- question 14
+-- lấy ra group không có account nào
+SELECT * FROM `group` g 
+JOIN account a ON g.groupId = a.accountId 
+where a.accountId = NULL 
+
+-- question 14
+-- lấy ra question không có answer nào
+SELECT  * FROM question q 
+join account a on q.questionId = a.accountId 
+WHERE a.accountId = NULL 
+
+-- question 9
+-- thống kê số lượng account trong mỗi group
+
+--question 11
+-- thống kê mỗi phòng ban có bao nhiêu dev, test, scrum,master,PM
 
 
